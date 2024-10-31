@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Appel à la fonction Lambda AWS
             try {
-                const response = await fetch('https://qz7d7wmpck62rmkqem2sgezmhy0yrkuk.lambda-url.us-east-1.on.aws/');
+                const response = await fetch(secrets.AWS_LAMBDA_FUNCTION);
                 const data = await response.json();
                 console.log('Nombre total de clics (Lambda):', data);
             } catch (error) {
