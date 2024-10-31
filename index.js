@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Appel initial à Lambda pour obtenir le nombre total de clics
     async function getInitialClicks() {
         try {
-            const response = await fetch('AWS_LAMBDA_FUNCTION');
+            const response = await fetch(secrets.AWS_LAMBDA_FUNCTION);
             const data = await response.json();
             clickCounter = parseInt(data);
             clickDisplay.textContent = clickCounter;
